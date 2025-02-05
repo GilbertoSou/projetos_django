@@ -10,11 +10,6 @@ class Projeto(models.Model):
     dt_final = models.DateField(verbose_name='Data de Término', blank=False, null=False)
 
     equipe = models.ForeignKey('Equipe', on_delete=models.CASCADE, related_name='projetos', null=True, blank=True)
-
-    class Meta:
-        verbose_name = 'Projeto'
-        verbose_name_plural = 'Projetos'
-        ordering = ['-dt_inicio']
     
     def __str__(self):
         return f'{self.nome} - {self.dt_inicio} - {self.dt_final}'
